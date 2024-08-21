@@ -1,12 +1,14 @@
 from bancoDeDados import BancoDeDados
 from pedidos import Pedido
 from produtos import Produto
+from clientes import Cliente
 
 class SistemaPrincipal:
     def __init__(self) -> None:
         self.banco = BancoDeDados()
         self.pedido = Pedido(self.banco)
         self.produtos = Produto(self.banco)
+        self.clientes = Cliente(self.banco)
 
     def menu(self):
         print('\nOpções:')
@@ -18,13 +20,12 @@ class SistemaPrincipal:
         option = input('Escolha uma opção: ')
 
         match option:
-            case '1': # Ir para o Menu de Vendas
+            case '1': # Ir para o Menu de Produtos
                 self.produtos.menu()
             case '2': # Ir para o Menu de Clientes
-                pass
+                self.clientes.menu()
             case '3': # Ir para o Menu de Pedidos
                 self.pedido.menu()
-                # pass
             case '0': # Exit
                 return self.endSystem()
             case _:

@@ -1,6 +1,7 @@
+from bancoDeDados import BancoDeDados
 class Pedido:
     def __init__(self, banco_de_dados):
-        self.banco_de_dados = banco_de_dados
+        self.banco_de_dados = BancoDeDados()
 
     def menu(self):
         while True:
@@ -101,5 +102,5 @@ class Pedido:
 
     def endSystem(self):
         print("Sistema encerrado.")
-        self.banco_de_dados.close_connection()
+        self.banco_de_dados.closeConnection()
         exit()
