@@ -36,8 +36,8 @@ class Cliente:
         return False
 
     def adicionarClienteMenu(self):
-        nome = input("Digite o nome do Produto: ")
-        email = input("Digite o preço do Produto: ")
+        nome = input("Digite o nome do Cliente: ")
+        email = input("Digite o email do Cliente: ")
     
         self.banco_de_dados.registerCliente(nome, email)
         print("Cliente adicionado com sucesso!")
@@ -71,7 +71,7 @@ class Cliente:
                 print("=================================")
 
                 nome = input("Digite o nome do Cliente: ")
-                email = input("Digite o preço do Cliente: ")
+                email = input("Digite o email do Cliente: ")
 
                 self.banco_de_dados.alterCliente(idCliente, nome, email)
                 print(f"Cliente com ID {idCliente} atualizado com sucesso!")
@@ -83,7 +83,7 @@ class Cliente:
     def deletarClienteMenu(self):
         try:
             idCliente = int(input("Digite o ID do Cliente a ser deletado: "))
-            cliente = self.banco_de_dados.deleteCliente(idCliente)
+            cliente = self.banco_de_dados.listCliente(idCliente)
             if cliente:
                 confirmacao = input(f"Deseja realmente deletar o Cliente ID {idCliente}? (s/n): ").lower()
                 if confirmacao == 's':

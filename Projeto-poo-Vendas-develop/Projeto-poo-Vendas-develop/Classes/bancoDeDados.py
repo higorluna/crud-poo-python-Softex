@@ -124,7 +124,7 @@ class BancoDeDados:
     
     def alterCliente(self,idCliente, nome, email):
         query = '''
-            UPDATE Produtos
+            UPDATE Clientes 
             SET Nome = %s, Email = %s
             WHERE ClienteID = %s
         '''

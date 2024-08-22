@@ -86,7 +86,7 @@ class Produto:
     def deletarProdutoMenu(self):
         try:
             idProduto = int(input("Digite o ID do Produto a ser deletado: "))
-            produto = self.banco_de_dados.deletarProduto(idProduto)
+            produto = self.banco_de_dados.listarProduto(idProduto)
             if produto:
                 confirmacao = input(f"Deseja realmente deletar o Produto ID {idProduto}? (s/n): ").lower()
                 if confirmacao == 's':
